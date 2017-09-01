@@ -1,0 +1,298 @@
+// index.scss
+@import 'normalize';
+@import 'react-md';
+@import 'material-icons';
+
+$md-light-theme: false;
+$md-primary-color: $md-pink-a-400;
+$md-secondary-color: $md-yellow-a-700;
+
+@include react-md-everything;
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #222222;
+  color: #f5f5f5;
+  background-image: url("../img/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 32px;
+  overflow-x:hidden;
+}
+
+h1 {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, .6);
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
+}
+
+.toolbar {
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.success {
+  background-color: darkgreen;
+}
+
+.error {
+  background-color: darkred;
+}
+
+.holder {
+  background-color: rgba(0, 0, 0, .6);
+  padding: 0 0 32px 0;
+
+  .movies-search {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.md-media {
+  background-color: #222;
+  img:not(.genre-image) {
+    width: initial !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9999999999;
+
+  .loading-holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  p {
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    color: #ffd600;
+    white-space: nowrap;
+  }
+}
+
+.md-list--drawer a {
+  text-decoration: none;
+}
+
+.drawer-active .md-text {
+  color: #ffd600;
+}
+
+.card-link {
+  color: #ffd600;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.small-text {
+  font-size: 14px;
+
+  h2 {
+    font-size: 14px !important;
+  }
+}
+
+.small-image {
+  display: inline-block;
+  margin: 8px;
+  min-width: 100px;
+
+  .image-holder {
+    width: 100px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+    img {
+      height: 150px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  p {
+    color: #ffd600;
+    text-align: center;
+  }
+}
+
+.image-list-item {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  margin: 16px;
+  padding-bottom: 0 !important;
+}
+
+.dummy-card-link {
+  display: inline-block;
+  width: 200px;
+  height: 1px;
+  margin: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.genre-image {
+  width: 100px !important;
+  transform: none !important;
+  position: static !important;
+  height: initial !important;
+  margin: 50px 10px;
+}
+
+.mini-icon {
+  transform: scale(.7);
+
+  i {
+    opacity: .5;
+  }
+
+  &.md-text--theme-primary {
+    i {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+}
+
+.md-dialog {
+  overflow-y: auto;
+  width: 612px;
+  max-width: 90%;
+
+  section {
+    text-align: center;
+
+    fieldset {
+      width: 250px;
+      display: inline-block;
+      height: 200px;
+      vertical-align: top;
+      margin: 12px;
+      text-align: left;
+    }
+  }
+}
+
+.loading-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+
+  #loadingImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  p {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #ffd600;
+    white-space: nowrap;
+    font-size: 1.5rem;
+  }
+}
+
+/*----------------------------------------------*/
+/*-------------------Animations-----------------*/
+/*----------------------------------------------*/
+.scale-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.scale-enter.scale-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: 200ms ease-out;
+  transition-property: opacity, transform;
+}
+
+.scale-leave {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-leave.scale-leave-active {
+  transform: scale(0);
+  opacity: 0;
+  transition: 200ms ease-in;
+  transition-property: opacity, transform;
+}
+/*----------------------------------------------*/
+.animate-enter {
+  transform: scale(.5) translateX(100%);
+  opacity: 0;
+}
+
+.animate-enter.animate-enter-active {
+  transform: scale(1) translateX(0);
+  opacity: 1;
+  transition: 200ms ease-out;
+  transition-property: opacity, transform;
+}
+
+.animate-leave {
+  transform: scale(1) translateX(0);
+  opacity: 1;
+}
+
+.animate-leave.animate-leave-active {
+  transform: scale(.5) translateX(100%);
+  opacity: 0;
+  transition: 200ms ease-out;
+  transition-property: opacity, transform;
+}

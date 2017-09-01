@@ -1,0 +1,6 @@
+{
+  "name": "movie-collection",
+  "dependencies": {
+    "automagic": ""
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>My Personal Movie Collection</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+<div id="app">{{ html|safe }}</div>
+<script>
+    function googleApiClientReady() {
+        gapi.client.setApiKey('AIzaSyDWs8SnQdM_j8Bl8vLsTV1FWh1m9R0qB7Q');
+        gapi.client.load('youtube', 'v3', function () {
+            window.youtubeReady = true;
+        });
+    }
+</script>
+<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+<script src="/js/vendor.js"></script>
+<script src="/js/vendor.bundle.js"></script>
+<script src="/js/bundle.js"></script>
+</body>
+</html>
